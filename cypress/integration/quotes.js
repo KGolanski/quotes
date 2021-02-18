@@ -13,9 +13,9 @@ describe('Userlane Training task', () => {
  
       const rr = new RegExp(/\u201C[\s\S]+?\u201D/, 'g');
       var results = (quotes.text().match(rr));
-      var temp_Arr = new Array(results);
+      
         
-      cy.writeFile('cypress/fixtures/data.json', {temp_Arr});
+      cy.writeFile('cypress/fixtures/data.json', {results});
       cy.readFile('cypress/fixtures/data.json').should('exist');
       })
 
